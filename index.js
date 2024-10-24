@@ -1,13 +1,18 @@
 const express = require('express');
-const app = express();
-const port = process.env.PORT || 3000;
+const path = require('path');
 
-// Ruta principal para la página de inicio
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+// Middleware para servir archivos estáticos (CSS, JS, imágenes)
+app.use(express.static('public'));
+
+// Ruta principal
 app.get('/', (req, res) => {
-  res.send('Bienvenido a la página de descargas de libros!');
+    res.sendFile(path.join(__dirname, 'views', 'index.html'));
 });
 
-// Servidor escuchando en el puerto definido
-app.listen(port, () => {
-  console.log(`Servidor escuchando en http://localhost:${port}`);
+// Iniciar el servidor
+app.listen(PORT, () => {
+    console.log(`Servidor corriendo en http://localhost:${PORT}`);
 });
