@@ -12,14 +12,15 @@ body {
     border: 1px solid #ccc;
     border-radius: 5px;
     margin: 10px;
-    padding: 10px;
+    padding: 30px;
     text-align: center;
-    width: 200px; /* Ajusta según sea necesario */
+    width: 150px; /* Ajusta según sea necesario */
+    height: 250px;
 }
 
 .book img {
     width: 100%;
-    height: auto;
+    height: 50%;
     border-radius: 5px;
 }
 
