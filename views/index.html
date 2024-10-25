@@ -4,17 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página de Libros</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Asegúrate de tener este archivo -->
+    <link rel="stylesheet" href="/css/styles.css"> <!-- Asegúrate de tener este archivo -->
 </head>
 <body>
 <div class="content">
     <h1>Libros</h1>
     <div class="book-list">
         <div class="book">
-            <img src="/img/El Beso, gustavo.jpg" alt="Libro 1">
-            <h2>El Beso</h2>
+          <h2 class="bookTitle">El Beso</h2>
+            <img src="/img/El Beso, gustavo.jpg" alt="Libro 1"
+             onclick="openModal('El Beso', 'Este libro cuenta la historia de un grupo de soldados, quienes estaban camino a la guerra por conquistar la ciudad de Toledo.En el camino a la ciudad necesitaban encontrar un refugio donde pudieran dormir, y mientras caminaban y caminaban, los soldados seguían sin poder encontrar un lugar en donde pudieran pasar la noche. Hasta que por fin encontraron una iglesia abandonada, en donde decidieron alojarse. A la mañana siguiente el capitán de grupo se comunicó con otros integrantes del grupo de soldados que se encontraban instalados en la ciudad de Toledo. En medio de la charla con sus compañeros les comento que él y su grupo de soldados habían pasado la noche en una iglesia abandonada y que allí había aparecido una mujer hermosa con la que él había estado compartiendo durante el trascurso de esa noche. Pero curiosamente esa mujer era la misma estatua de mármol que estaba sobre una de las tumbas del patio trasero de la iglesia. Los soldados al escuchar lo que el capitán les estaba contando, ellos comenzaron a burlarse de él y a decirles que eran incoherencias lo que estaba hablando. Él les dijo que esa noche los esperaba en la iglesia abandonada para poder beber un poco y que él les mostraría a la mujer. Dicho así, los soldados llegaron por la noche, ellos estuvieron bebiendo hasta quedar completamente ebrios por tanto alcohol que habían ingerido. El capitán los llevo a la parte trasera de la iglesia y allí les mostró la estatua de la mujer, en la inscripción de la lápida que estaba bajo la estatua, decía llamarse la mujer Elvira y a la par de esa lápida se encontraba la de su marido. El capitán de tan ebrio que se encontraba, se para frente a la estatua del marido de Elvira y le escupió alcohol en la cara de la estatua y le dijo que él estaba enamorado de su esposa Elvira, diciéndole también que la besaría. Así que el capitán se dirigió frente a la estatua de Elvira, y cuando estuvo apuntó de besarla, de la nada el capitán cayó al suelo con la cara totalmente destrozada y sangrando por los ojos y la boca. Los soldados que presenciaron lo ocurrido, dijeron que la estatua del esposo de Elvira, había cobrado vida y con su mano de mármol le había dado un puñetazo en el rostro al capitán, por haber querido besar a su amada Elvira.')">
             <p>Gustavo Adolfo Bécquer</p>
             <a href="/pdf/El beso, Gustavo Adolfo Bécquer.pdf" download>Descargar</a>
+            <a href="/libro1.html">Info</a>
         </div>
         <div class="book">
             <img src="/img/el corazon delator, edgar.jpeg" alt="Libro 2">
@@ -23,37 +25,37 @@
             <a href="/pdf/El corazón delator Autor Edgar Allan Poe.pdf" download>Descargar</a>
         </div>
         <div class="book">
-            <img src="/img/El Beso, gustavo.jpg" alt="Libro 1">
+            <img src="/img/El Beso, gustavo.jpg" alt="Libro 3">
             <h2>El Beso</h2>
             <p>Gustavo Adolfo Bécquer</p>
             <a href="/pdf/El beso, Gustavo Adolfo Bécquer.pdf" download>Descargar</a>
         </div>
         <div class="book">
-            <img src="/img/el corazon delator, edgar.jpeg" alt="Libro 2">
+            <img src="/img/el corazon delator, edgar.jpeg" alt="Libro 4">
             <h2>El corazón delator</h2>
             <p>Edgar Allan Poe</p>
             <a href="/pdf/El corazón delator Autor Edgar Allan Poe.pdf" download>Descargar</a>
         </div>
         <div class="book">
-            <img src="/img/El Beso, gustavo.jpg" alt="Libro 1">
+            <img src="/img/El Beso, gustavo.jpg" alt="Libro 5">
             <h2>El Beso</h2>
             <p>Gustavo Adolfo Bécquer</p>
             <a href="/pdf/El beso, Gustavo Adolfo Bécquer.pdf" download>Descargar</a>
         </div>
         <div class="book">
-            <img src="/img/el corazon delator, edgar.jpeg" alt="Libro 2">
+            <img src="/img/el corazon delator, edgar.jpeg" alt="Libro 6">
             <h2>El corazón delator</h2>
             <p>Edgar Allan Poe</p>
             <a href="/pdf/El corazón delator Autor Edgar Allan Poe.pdf" download>Descargar</a>
         </div>
         <div class="book">
-            <img src="/img/El Beso, gustavo.jpg" alt="Libro 1">
+            <img src="/img/El Beso, gustavo.jpg" alt="Libro 7">
             <h2>El Beso</h2>
             <p>Gustavo Adolfo Bécquer</p>
             <a href="/pdf/El beso, Gustavo Adolfo Bécquer.pdf" download>Descargar</a>
         </div>
         <div class="book">
-            <img src="/img/el corazon delator, edgar.jpeg" alt="Libro 2">
+            <img src="/img/el corazon delator, edgar.jpeg" alt="Libro 8">
             <h2>El corazón delator</h2>
             <p>Edgar Allan Poe</p>
             <a href="/pdf/El corazón delator Autor Edgar Allan Poe.pdf" download>Descargar</a>
@@ -63,7 +65,14 @@
         <!-- Agrega más libros aquí -->
     </div>
 </div>
-
+ <!-- Modal para mostrar el resumen del libro -->
+ <div class="modal" id="bookModal">
+  <div class="modal-content">
+      <span class="close-button" id="closeModal">&times;</span>
+      <h2 id="bookTitle">Título del libro</h2>
+      <p id="bookSummary">Este es el resumen del libro.</p>
+  </div>
+</div>
 
 <!--Pie de pagina-->
 <footer class="footer">
@@ -98,5 +107,6 @@
   </footer>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src="/js/logic.js"></script>
 </body>
 </html>
